@@ -11,8 +11,8 @@ $ composer require erlanggariansyah/response-handler
 Mereturn Response.
 ```php
 <?php
-use ResponseHandler\Resp;
-Resp::badRequestNull("// parameter //");
+use ErlanggaRiansyah\ResponseHandler\Resp;
+return Resp::badRequestNull("// parameter //");
 ```
 
 ## ACHTUNG!
