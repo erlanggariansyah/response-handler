@@ -1,13 +1,13 @@
-# random-password
+# response-handler
 Mereturn Response dengan Response Handler
 
-## Installation
+## Instalasi
 Library ini membutuhkan composer.
 ```
 $ composer require erlanggariansyah/response-handler
 ```
 
-## Usage
+## Penggunaan
 Mereturn Response.
 ```php
 <?php
