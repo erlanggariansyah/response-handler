@@ -2,18 +2,24 @@
 Mereturn Response dengan Response Handler
 
 ## Instalasi
-Library ini membutuhkan composer.
+Package ini membutuhkan composer.
 ```
 $ composer require erlanggariansyah/response-handler
 ```
 
 ## Penggunaan
-Mereturn response sukses
+Mereturn response dengan status sukses
 ```php
 <?php
 use ErlanggaRiansyah\ResponseHandler\Resp;
+
 return Resp::requestSuccess();
 ```
 
+Bad Request
+```php
+<?php
+return Resp::requestEmpty();
+```
 ## ACHTUNG!
 Penggunaan untuk development API.
