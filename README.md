@@ -8,7 +8,7 @@ $ composer require erlanggariansyah/response-handler
 ```
 
 ## Penggunaan
-Mereturn response dengan status sukses
+Request Success
 ```php
 <?php
 use ErlanggaRiansyah\ResponseHandler\Resp;
@@ -19,7 +19,23 @@ return Resp::requestSuccess();
 Bad Request
 ```php
 <?php
-return Resp::requestEmpty();
+return Resp::requestEmpty($param);
+```
+```php
+<?php
+return Resp::requestNull($param);
+```
+
+Request Conflict
+```php
+<?php
+return Resp::requestConflict($param);
+```
+
+Resource Not Found
+```php
+<?php
+return Resp::requestNotFound($param);
 ```
 ## ACHTUNG!
 Penggunaan untuk development API.
