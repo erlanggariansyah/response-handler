@@ -8,11 +8,11 @@ $ composer require erlanggariansyah/response-handler
 ```
 
 ## Penggunaan
-Mereturn Response.
+Mereturn response sukses
 ```php
 <?php
 use ErlanggaRiansyah\ResponseHandler\Resp;
-return Resp::badRequestNull("// parameter //");
+return Resp::requestSuccess();
 ```
 
 ## ACHTUNG!
