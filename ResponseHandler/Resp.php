@@ -3,7 +3,7 @@
 namespace ErlanggaRiansyah\ResponseHandler;
 
 class Resp {
-    public static function ok() {
+    public static function requestSuccess() {
         return response()->json([
             "code" => 200,
             "message" => "success",
@@ -15,7 +15,7 @@ class Resp {
         ], 200);
     }
 
-    public static function badRequestEmpty(String $field) {
+    public static function requestEmpty(String $field) {
         return response()->json([
             "code" => 400,
             "message" => "Sorry, the ".$field." field is required and the server detects that it is empty.",
@@ -39,7 +39,7 @@ class Resp {
         ], 409);
     }
 
-    public static function badRequestNull(String $field) {
+    public static function requestNull(String $field) {
         return response()->json([
             "code" => 400,
             "message" => "Sorry, the ".$field." field is required and the server detects that it is doesn't exists.",
@@ -51,7 +51,7 @@ class Resp {
         ], 400);
     }
 
-    public static function notFound(String $resource) {
+    public static function requestNotFound(String $resource) {
         return response()->json([
             "code" => 404,
             "message" => "Sorry, the resource ".$resource." not found in the database.",
@@ -63,7 +63,7 @@ class Resp {
         ], 404);
     }
 
-    public static function badRequestInvalid(String $field) {
+    public static function requestInvalid(String $field) {
         return response()->json([
             "code" => 400,
             "message" => "Sorry, the ".$field." is not valid.",
@@ -75,7 +75,7 @@ class Resp {
         ], 400);
     }
 
-    public static function standardPassword() {
+    public static function passwordInvalid() {
         return response()->json([
             "code" => 400,
             "message" => "Sorry, the password must contain at least 8 characters.",
@@ -87,7 +87,7 @@ class Resp {
         ], 400);
     }
 
-    public static function invalidDate (String $dateField) {
+    public static function dateInvalid (String $dateField) {
         return response()->json([
             "code" => 400,
             "message" => "Sorry, the ".$dateField." format does not match the format set by the server (yyyy/MM/dd).",
@@ -99,7 +99,7 @@ class Resp {
         ], 400);
     }
 
-    public static function unauthorized(String $resource) {
+    public static function accessUnauthorized(String $resource) {
         return response()->json([
             "code" => 401,
             "message" => "The request was successful but unauthorized.",
@@ -111,9 +111,7 @@ class Resp {
         ], 401);
     }
 
-    // ARRAY LOCATION
-
-    public static function arrBadRequest(Object $resource) {
+    public static function requestInvalidArray(Object $resource) {
         return response()->json([
             "code" => 400,
             "message" => "Sorry, the field is not valid or missing.",
@@ -125,7 +123,7 @@ class Resp {
         ], 400);
     }
 
-    public static function arrTimeFormat(Object $resource) {
+    public static function timeInvalid(Object $resource) {
         return response()->json([
             "code" => 400,
             "message" => "Sorry, the time format does not match the format set by the server (H:i).",
