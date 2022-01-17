@@ -59,5 +59,11 @@ Unauthorized Access
 <?php
 return Resp::accessUnauthorized($param);
 ```
+
+Not Acceptable
+```php
+<?php
+return Resp::requestNotAcceptable($param);
+```
 ## ACHTUNG!
 Penggunaan package ini diperuntukkan khusus untuk Development API.
