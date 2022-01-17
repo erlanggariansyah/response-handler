@@ -134,4 +134,16 @@ class Resp {
             ]
         ], 400);
     }
+
+    public static function requestNotAcceptable(String $resource) {
+        return response()->json([
+            "code" => 406,
+            "message" => "Sorry, the server is unwilling to supply a default representation.",
+            "errors" => [
+                "title" => "NOT ACCEPTABLE",
+                "location" => $resource,
+                "reason" => "The server cannot produce a response matching the list of acceptable values defined in the request's proactive content negotiation headers."
+            ]
+        ], 406);
+    }
 }
