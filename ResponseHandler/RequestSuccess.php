@@ -3,14 +3,9 @@
 namespace ErlanggaRiansyah\ResponseHandler;
 
 class RequestSuccess {
-    private String $args;
 
-    public function __constructor (String $args) {
-        $this->args = $args;
-    }
-
-    public function getStatus() {
-        return 200;     
+    public static function getStatus() {
+        return response()->json([], 200);     
     }
 
     public static function getResponse($args) {
@@ -19,13 +14,21 @@ class RequestSuccess {
             "message" => "success",
             "details" => [
                 "title" => "OK",
-                "location" => null,
+                "location" => $args,
                 "reason" => "The request was successful."
             ]
         ], 200);
     }
 
     public static function getMessage() {
-        return "success";
+        return response()->json(["success"], 200);
+    }
+
+    public static function getDetails($args) {
+        return response()->json([
+            "title" => "OK",
+            "location" => $args,
+            "reason" => "The request was successful."
+        ], 200);
     }
 }
