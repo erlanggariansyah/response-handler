@@ -3,7 +3,21 @@
 namespace ErlanggaRiansyah\ResponseHandler;
 
 class Resp {
-    public static function requestCreated() {
+    public static function loginUnsuccessfull($credential = "email", $password = "password") : Object {
+        return response()->json([
+            "code" => 401,
+            "message" => "The " . $credential . " or " . $password . " is wrong.",
+            "errors" => [
+                "title" => "UNAUTHORIZED",
+                "location" => [
+                    $credential, $password
+                ],
+                "reason" => "The requested resource is protected."
+            ]
+        ], 401);
+    }
+
+    public static function requestCreated() : Object {
         return response()->json([
             "code" => 201,
             "message" => "success",
