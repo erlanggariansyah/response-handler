@@ -2,6 +2,9 @@
 
 namespace ErlanggaRiansyah\ResponseHandler;
 
+/**
+ * COMING SOON, NEXT UPDATE.
+ */
 class RequestSuccess {
 
     public static function getStatus() {

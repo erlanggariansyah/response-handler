@@ -3,7 +3,19 @@
 namespace ErlanggaRiansyah\ResponseHandler;
 
 class Resp {
-    public static function requestSuccess() {
+    public static function requestCreated() {
+        return response()->json([
+            "code" => 201,
+            "message" => "success",
+            "details" => [
+                "title" => "CREATED",
+                "location" => $field,
+                "reason" => "The resource " . $field . " was created successfully."
+            ]
+        ], 201);
+    }
+
+    public static function requestSuccess() : Object {
         return response()->json([
             "code" => 200,
             "message" => "success",
@@ -15,7 +27,7 @@ class Resp {
         ], 200);
     }
 
-    public static function requestEmpty(String $field) {
+    public static function requestEmpty(String $field) : Object {
         return response()->json([
             "code" => 400,
             "message" => "Sorry, the ".$field." field is required and the server detects that it is empty.",
@@ -27,7 +39,7 @@ class Resp {
         ], 400);
     }
 
-    public static function requestConflict(String $resource) {
+    public static function requestConflict(String $resource) : Object {
         return response()->json([
             "code" => 409,
             "message" => "Sorry, the ".$resource." has already been registered into the database.",
@@ -39,7 +51,7 @@ class Resp {
         ], 409);
     }
 
-    public static function requestNull(String $field) {
+    public static function requestNull(String $field) : Object {
         return response()->json([
             "code" => 400,
             "message" => "Sorry, the ".$field." field is required and the server detects that it is doesn't exists.",
@@ -51,7 +63,7 @@ class Resp {
         ], 400);
     }
 
-    public static function requestNotFound(String $resource) {
+    public static function requestNotFound(String $resource) : Object {
         return response()->json([
             "code" => 404,
             "message" => "Sorry, the resource ".$resource." not found in the database.",
@@ -63,7 +75,7 @@ class Resp {
         ], 404);
     }
 
-    public static function requestInvalid(String $field) {
+    public static function requestInvalid(String $field) : Object {
         return response()->json([
             "code" => 400,
             "message" => "Sorry, the ".$field." is not valid.",
@@ -75,7 +87,7 @@ class Resp {
         ], 400);
     }
 
-    public static function passwordInvalid() {
+    public static function passwordInvalid() : Object {
         return response()->json([
             "code" => 400,
             "message" => "Sorry, the password must contain at least 8 characters.",
@@ -87,7 +99,7 @@ class Resp {
         ], 400);
     }
 
-    public static function dateInvalid (String $dateField) {
+    public static function dateInvalid (String $dateField) : Object {
         return response()->json([
             "code" => 400,
             "message" => "Sorry, the ".$dateField." format does not match the format set by the server (yyyy/MM/dd).",
@@ -99,7 +111,7 @@ class Resp {
         ], 400);
     }
 
-    public static function accessUnauthorized(String $resource) {
+    public static function accessUnauthorized(String $resource) : Object {
         return response()->json([
             "code" => 401,
             "message" => "The request was successful but unauthorized.",
@@ -111,7 +123,7 @@ class Resp {
         ], 401);
     }
 
-    public static function requestInvalidArray(Object $resource) {
+    public static function requestInvalidArray(Object $resource) : Object {
         return response()->json([
             "code" => 400,
             "message" => "Sorry, the field is not valid or missing.",
@@ -123,7 +135,7 @@ class Resp {
         ], 400);
     }
 
-    public static function timeInvalid(Object $resource) {
+    public static function timeInvalid(Object $resource) : Object {
         return response()->json([
             "code" => 400,
             "message" => "Sorry, the time format does not match the format set by the server (H:i).",
@@ -135,7 +147,7 @@ class Resp {
         ], 400);
     }
 
-    public static function requestNotAcceptable(String $resource) {
+    public static function requestNotAcceptable(String $resource) : Object {
         return response()->json([
             "code" => 406,
             "message" => "Sorry, the server is unwilling to supply a default representation.",
