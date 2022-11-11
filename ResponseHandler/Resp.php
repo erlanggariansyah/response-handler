@@ -3,7 +3,7 @@
 namespace ErlanggaRiansyah\ResponseHandler;
 
 class Resp {
-    public static function loginUnsuccessfull($credential = "email", $password = "password") : Object {
+    public static function loginAttemptUnsuccessful($credential = "email", $password = "password") : Object {
         return response()->json([
             "code" => 401,
             "message" => "The " . $credential . " or " . $password . " is wrong.",
@@ -17,7 +17,7 @@ class Resp {
         ], 401);
     }
 
-    public static function requestCreated() : Object {
+    public static function requestCreated(String $field) : Object {
         return response()->json([
             "code" => 201,
             "message" => "success",
