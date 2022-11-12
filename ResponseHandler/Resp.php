@@ -41,6 +41,19 @@ class Resp {
         ], 200);
     }
 
+    public static function requestSuccessWithData($data, String $field = "data") : Object {
+        return response()->json([
+            "code" => 200,
+            "message" => "success",
+            "details" => [
+                "title" => "OK",
+                "location" => null,
+                "reason" => "The request was successful."
+            ],
+            $field => $data
+        ], 200);
+    }
+
     public static function requestEmpty(String $field) : Object {
         return response()->json([
             "code" => 400,
